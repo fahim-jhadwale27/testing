@@ -1,4 +1,3 @@
-```css
 /* ========================================
    01. Design tokens and reset
    ======================================== */
@@ -52,8 +51,9 @@ a {
 
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.62),
-    transparent
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent 100%
   );
 }
 
@@ -62,7 +62,8 @@ a {
   font-family: Arial, sans-serif;
   font-size: 25px;
   font-weight: 900;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .nav-links,
@@ -96,14 +97,12 @@ a {
   border: 0;
   background: none;
   color: white;
-  font-size: 19px;
+  font-size: 18px;
   padding: 3px;
   cursor: pointer;
-}
-
-.search {
-  font-size: 23px;
-  transform: rotate(-20deg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .kids {
@@ -137,15 +136,7 @@ a {
 
   position: relative;
   overflow: hidden;
-
-  background:
-    radial-gradient(
-      ellipse at 70% 35%,
-      #65777b 0%,
-      #293a40 30%,
-      #10171b 65%,
-      #050708 100%
-    );
+  background: #090909;
 }
 
 .hero-art {
@@ -154,43 +145,15 @@ a {
 
   background:
     radial-gradient(
-      ellipse at 72% 30%,
-      rgba(190, 205, 205, 0.75) 0%,
-      rgba(88, 112, 118, 0.65) 25%,
-      rgba(31, 49, 55, 0.9) 48%,
-      rgba(5, 9, 12, 1) 80%
-    ),
-    linear-gradient(
-      145deg,
-      #111b20,
-      #50656a 45%,
-      #11191e 70%,
-      #050708
+      ellipse at 70% 35%,
+      #4b6269 0%,
+      #223238 35%,
+      #10171b 68%,
+      #050708 100%
     );
 
   background-size: cover;
   background-position: center;
-  filter: saturate(0.72);
-}
-
-.hero-art::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      155deg,
-      transparent 0 38%,
-      rgba(5, 10, 13, 0.9) 39% 44%,
-      transparent 45%
-    ),
-    linear-gradient(
-      25deg,
-      transparent 0 55%,
-      rgba(12, 23, 27, 0.9) 56% 62%,
-      transparent 63%
-    );
 }
 
 .hero-shade {
@@ -200,16 +163,15 @@ a {
   background:
     linear-gradient(
       90deg,
-      #080808 0%,
-      rgba(8, 8, 8, 0.83) 18%,
-      rgba(8, 8, 8, 0.48) 40%,
-      rgba(8, 8, 8, 0.05) 76%
+      rgba(9, 9, 9, 0.95) 0%,
+      rgba(9, 9, 9, 0.75) 35%,
+      rgba(9, 9, 9, 0.15) 75%,
+      transparent 100%
     ),
     linear-gradient(
       0deg,
       #090909 0%,
-      transparent 36%,
-      rgba(0, 0, 0, 0.18) 100%
+      transparent 30%
     );
 }
 
@@ -232,10 +194,10 @@ a {
   color: #ddd;
 }
 
-.n-mark {
+.s-mark {
   font: bold 20px Arial;
   color: var(--red);
-  letter-spacing: -3px;
+  letter-spacing: -1px;
 }
 
 .divider {
@@ -245,17 +207,19 @@ a {
 h1 {
   font-family: Oswald, Impact, sans-serif;
   font-size: clamp(70px, 8.4vw, 122px);
-  line-height: 0.83;
+  line-height: 0.85;
   letter-spacing: -1px;
 
-  margin: 23px 0 20px;
+  margin: 20px 0;
 
-  font-weight: 600;
-  text-shadow: 0 3px 16px #0006;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.8);
 }
 
 h1 span {
   color: var(--red);
+  text-shadow: 0 4px 20px rgba(229, 9, 20, 0.35);
 }
 
 .hero-meta {
@@ -287,10 +251,11 @@ h1 span {
 .description {
   font-size: 13px;
   line-height: 1.7;
-  color: #ddd;
+  color: #e5e5e5;
 
   max-width: 375px;
   margin: 15px 0 19px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .hero-actions {
@@ -327,12 +292,12 @@ h1 span {
   color: white;
 }
 
-.play {
-  font-size: 14px;
+.play-icon {
+  font-size: 12px;
 }
 
-.info {
-  font-size: 16px;
+.info-icon {
+  font-size: 15px;
 }
 
 .hero-bottom {
@@ -358,7 +323,7 @@ h1 span {
   place-items: center;
 
   color: #fff;
-  background: #1115;
+  background: rgba(17, 17, 17, 0.533);
 }
 
 .age-box {
@@ -408,7 +373,7 @@ h1 span {
 .continue-row,
 .section-heading {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
@@ -473,7 +438,7 @@ h1 span {
 
   transition: filter 0.2s;
 
-  box-shadow: 0 5px 18px #0005;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.333);
 }
 
 .card:hover .poster {
@@ -490,7 +455,7 @@ h1 span {
   background:
     linear-gradient(
       0deg,
-      #0008,
+      rgba(0, 0, 0, 0.533),
       transparent 58%
     );
 }
@@ -595,9 +560,10 @@ h1 span {
   border-radius: 50%;
 
   place-items: center;
-  padding-left: 3px;
+  padding-left: 2px;
+  font-size: 12px;
 
-  background: #0006;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .card:hover .card-play {
@@ -699,7 +665,7 @@ h1 span {
 
   letter-spacing: -6px;
 
-  align-self: end;
+  align-self: flex-end;
 
   margin-right: -14px;
 
@@ -723,7 +689,7 @@ h1 span {
 
   overflow: hidden;
 
-  box-shadow: 0 5px 18px #0006;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.4);
 
   transition: filter 0.2s;
 }
@@ -734,7 +700,7 @@ h1 span {
 
 .trend-poster strong,
 .trend-poster small,
-.mini-n {
+.mini-s {
   position: relative;
   z-index: 1;
 }
@@ -756,7 +722,7 @@ h1 span {
   margin-top: 9px;
 }
 
-.mini-n {
+.mini-s {
   position: absolute;
 
   top: 9px;
@@ -1082,4 +1048,3 @@ footer {
   }
 
 }
-```
