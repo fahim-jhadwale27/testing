@@ -1,0 +1,1085 @@
+```css
+/* ========================================
+   01. Design tokens and reset
+   ======================================== */
+
+:root {
+  --red: #e50914;
+  --bg: #090909;
+  --text: #f4f4f4;
+  --muted: #aaa;
+  --gutter: 5vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ========================================
+   02. Header and navigation
+   ======================================== */
+
+.topbar {
+  height: 68px;
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  gap: 38px;
+
+  padding: 0 var(--gutter);
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.62),
+    transparent
+  );
+}
+
+.brand {
+  color: var(--red);
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.nav-links,
+.nav-tools {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  gap: 22px;
+  color: #ddd;
+  font-size: 12px;
+}
+
+.nav-links a {
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #fff;
+  font-weight: 700;
+}
+
+.nav-tools {
+  margin-left: auto;
+  gap: 20px;
+}
+
+.icon-button {
+  border: 0;
+  background: none;
+  color: white;
+  font-size: 19px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.search {
+  font-size: 23px;
+  transform: rotate(-20deg);
+}
+
+.kids {
+  font-size: 12px;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 4px;
+  background: #8a4a3b;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.avatar span {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+
+/* ========================================
+   03. Featured hero
+   ======================================== */
+
+.hero {
+  height: min(740px, 88vh);
+  min-height: 570px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 70% 35%,
+      #65777b 0%,
+      #293a40 30%,
+      #10171b 65%,
+      #050708 100%
+    );
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 72% 30%,
+      rgba(190, 205, 205, 0.75) 0%,
+      rgba(88, 112, 118, 0.65) 25%,
+      rgba(31, 49, 55, 0.9) 48%,
+      rgba(5, 9, 12, 1) 80%
+    ),
+    linear-gradient(
+      145deg,
+      #111b20,
+      #50656a 45%,
+      #11191e 70%,
+      #050708
+    );
+
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.72);
+}
+
+.hero-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      155deg,
+      transparent 0 38%,
+      rgba(5, 10, 13, 0.9) 39% 44%,
+      transparent 45%
+    ),
+    linear-gradient(
+      25deg,
+      transparent 0 55%,
+      rgba(12, 23, 27, 0.9) 56% 62%,
+      transparent 63%
+    );
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #080808 0%,
+      rgba(8, 8, 8, 0.83) 18%,
+      rgba(8, 8, 8, 0.48) 40%,
+      rgba(8, 8, 8, 0.05) 76%
+    ),
+    linear-gradient(
+      0deg,
+      #090909 0%,
+      transparent 36%,
+      rgba(0, 0, 0, 0.18) 100%
+    );
+}
+
+.hero-content {
+  position: absolute;
+  top: 22%;
+  left: var(--gutter);
+  width: min(450px, 42vw);
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #ddd;
+}
+
+.n-mark {
+  font: bold 20px Arial;
+  color: var(--red);
+  letter-spacing: -3px;
+}
+
+.divider {
+  color: #777;
+}
+
+h1 {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: clamp(70px, 8.4vw, 122px);
+  line-height: 0.83;
+  letter-spacing: -1px;
+
+  margin: 23px 0 20px;
+
+  font-weight: 600;
+  text-shadow: 0 3px 16px #0006;
+}
+
+h1 span {
+  color: var(--red);
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: #ddd;
+  font-size: 11px;
+}
+
+.match {
+  color: #46d369;
+  font-weight: 700;
+}
+
+.rating {
+  border: 1px solid #888;
+  padding: 2px 6px;
+  font-size: 9px;
+}
+
+.ultra {
+  font-size: 8px;
+  padding: 2px 4px;
+  border: 1px solid #999;
+}
+
+.description {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #ddd;
+
+  max-width: 375px;
+  margin: 15px 0 19px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 9px;
+}
+
+.button {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 3px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: filter 0.2s;
+}
+
+.button:hover {
+  filter: brightness(0.86);
+}
+
+.button-light {
+  background: #fff;
+  color: #111;
+}
+
+.button-muted {
+  background: rgba(109, 109, 110, 0.72);
+  color: white;
+}
+
+.play {
+  font-size: 14px;
+}
+
+.info {
+  font-size: 16px;
+}
+
+.hero-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 17%;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.sound {
+  font-size: 13px;
+
+  border: 1px solid #aaa;
+  border-radius: 50%;
+
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  color: #fff;
+  background: #1115;
+}
+
+.age-box {
+  padding: 7px 30px 7px 10px;
+
+  border-left: 2px solid #ddd;
+  background: #181818a8;
+
+  font-size: 12px;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 27px;
+  left: var(--gutter);
+
+  color: #aaa;
+  font-size: 8px;
+  letter-spacing: 1.8px;
+}
+
+.scroll-cue span {
+  font-size: 14px;
+  margin-left: 9px;
+}
+
+
+/* ========================================
+   04. Catalog layout
+   ======================================== */
+
+.catalog {
+  position: relative;
+  z-index: 2;
+
+  padding: 0 var(--gutter) 54px;
+  margin-top: -48px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0,
+      #090909 68px
+    );
+}
+
+.continue-row,
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.continue-row {
+  padding-top: 25px;
+}
+
+.continue-row h2,
+.section-heading h2 {
+  font-size: 19px;
+  margin: 0;
+
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.see-all {
+  font-size: 10px;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.see-all:hover {
+  color: #fff;
+}
+
+.see-all span {
+  color: var(--red);
+  font-size: 15px;
+  margin-left: 6px;
+}
+
+.cards {
+  display: grid;
+  gap: 14px;
+}
+
+.continue-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 15px;
+}
+
+.card {
+  position: relative;
+  min-width: 0;
+}
+
+
+/* ========================================
+   05. Continue watching cards
+   ======================================== */
+
+.poster {
+  height: clamp(120px, 15vw, 195px);
+
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: filter 0.2s;
+
+  box-shadow: 0 5px 18px #0005;
+}
+
+.card:hover .poster {
+  filter: brightness(1.12);
+}
+
+.poster::after,
+.trend-poster::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      0deg,
+      #0008,
+      transparent 58%
+    );
+}
+
+.poster-one {
+  background:
+    radial-gradient(
+      ellipse at 40% 50%,
+      #6b8b8a,
+      #172328 52%,
+      #050a0c
+    );
+}
+
+.poster-two {
+  background:
+    radial-gradient(
+      ellipse at 53% 42%,
+      #e8ac67,
+      #812f35 40%,
+      #171622 75%
+    );
+}
+
+.poster-three {
+  background:
+    radial-gradient(
+      ellipse at 62% 35%,
+      #c0aa84,
+      #5b4140 38%,
+      #131921 78%
+    );
+}
+
+.poster-four {
+  background:
+    radial-gradient(
+      ellipse at 45% 50%,
+      #a98150,
+      #302b29 45%,
+      #101113 77%
+    );
+}
+
+.poster-label {
+  position: absolute;
+  top: 9px;
+  left: 11px;
+
+  color: var(--red);
+  font-weight: 900;
+  font-size: 15px;
+
+  z-index: 1;
+}
+
+.poster-title {
+  font-family: Oswald, sans-serif;
+  font-weight: 600;
+
+  font-size: clamp(22px, 2.8vw, 38px);
+  line-height: 0.9;
+
+  text-align: center;
+  letter-spacing: 1.5px;
+
+  text-shadow: 0 2px 8px #000;
+
+  z-index: 1;
+}
+
+.script {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+
+  font-size: clamp(26px, 3.8vw, 48px);
+  line-height: 0.9;
+  letter-spacing: -1.5px;
+}
+
+.small-poster {
+  font-size: clamp(18px, 2.4vw, 32px);
+}
+
+.serif {
+  font-family: Georgia, serif;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.card-play {
+  display: none;
+
+  position: absolute;
+  z-index: 2;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid white;
+  border-radius: 50%;
+
+  place-items: center;
+  padding-left: 3px;
+
+  background: #0006;
+}
+
+.card:hover .card-play {
+  display: grid;
+}
+
+.progress {
+  height: 2px;
+  background: #777;
+  display: block;
+}
+
+.progress i {
+  height: 100%;
+  background: var(--red);
+  display: block;
+}
+
+.card-name {
+  display: block;
+  padding-top: 8px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.card-name small {
+  display: block;
+
+  color: #8e8e8e;
+  font-size: 9px;
+  font-weight: 400;
+
+  padding-top: 3px;
+}
+
+.more {
+  position: absolute;
+  right: 7px;
+  bottom: 8px;
+
+  font-size: 18px;
+  color: #ddd;
+
+  display: none;
+}
+
+.card:hover .more {
+  display: block;
+}
+
+
+/* ========================================
+   06. Trending titles
+   ======================================== */
+
+.section-heading {
+  margin-top: 42px;
+}
+
+.section-kicker {
+  font-size: 8px;
+  color: #999;
+
+  letter-spacing: 1.7px;
+
+  margin: 0 0 5px;
+}
+
+.section-heading h2 span {
+  color: var(--red);
+  font-size: 16px;
+}
+
+.trending-cards {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.trend-card {
+  display: flex;
+  align-items: stretch;
+
+  overflow: hidden;
+  min-width: 0;
+}
+
+.rank {
+  font-family: Oswald, sans-serif;
+
+  font-size: clamp(68px, 8.7vw, 116px);
+  font-weight: 700;
+  line-height: 0.95;
+
+  color: #090909;
+
+  -webkit-text-stroke: 1.5px #777;
+
+  letter-spacing: -6px;
+
+  align-self: end;
+
+  margin-right: -14px;
+
+  z-index: 1;
+}
+
+.trend-poster {
+  height: clamp(140px, 18vw, 220px);
+
+  flex: 1;
+  min-width: 0;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px #0006;
+
+  transition: filter 0.2s;
+}
+
+.trend-card:hover .trend-poster {
+  filter: brightness(1.12);
+}
+
+.trend-poster strong,
+.trend-poster small,
+.mini-n {
+  position: relative;
+  z-index: 1;
+}
+
+.trend-poster strong {
+  font-family: Oswald, sans-serif;
+
+  font-size: clamp(15px, 2vw, 27px);
+  line-height: 0.95;
+
+  letter-spacing: 0.7px;
+
+  text-shadow: 0 2px 9px #000;
+}
+
+.trend-poster small {
+  font-size: 6px;
+  letter-spacing: 1.6px;
+  margin-top: 9px;
+}
+
+.mini-n {
+  position: absolute;
+
+  top: 9px;
+  left: 10px;
+
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.trend-one {
+  background:
+    radial-gradient(
+      ellipse at 50% 25%,
+      #f28b47,
+      #882b1e 40%,
+      #17111b 80%
+    );
+}
+
+.trend-two {
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      #b6b0a2,
+      #304c59 36%,
+      #11151d 76%
+    );
+}
+
+.trend-three {
+  background:
+    radial-gradient(
+      ellipse at 48% 35%,
+      #d4aa69,
+      #594035 40%,
+      #10191c 80%
+    );
+}
+
+.trend-four {
+  background:
+    radial-gradient(
+      ellipse at 52% 34%,
+      #ce7f55,
+      #603239 43%,
+      #131324 79%
+    );
+}
+
+.trend-five {
+  background:
+    radial-gradient(
+      ellipse at 50% 38%,
+      #63a8ac,
+      #24555f 42%,
+      #10161d 80%
+    );
+}
+
+
+/* ========================================
+   07. Footer
+   ======================================== */
+
+footer {
+  border-top: 1px solid #252525;
+
+  margin-top: 50px;
+  padding-top: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  color: #777;
+  font-size: 9px;
+}
+
+.footer-brand {
+  font-size: 18px;
+  margin-right: auto;
+}
+
+
+/* ========================================
+   08. Large screen layout
+   ======================================== */
+
+@media (min-width: 1500px) {
+
+  :root {
+    --gutter: max(
+      5vw,
+      calc((100vw - 1440px) / 2)
+    );
+  }
+
+}
+
+
+/* ========================================
+   09. Tablet layout
+   ======================================== */
+
+@media (max-width: 760px) {
+
+  :root {
+    --gutter: 5vw;
+  }
+
+  .topbar {
+    height: 60px;
+    gap: 22px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    gap: 13px;
+    font-size: 11px;
+  }
+
+  .nav-links a:nth-child(n + 4) {
+    display: none;
+  }
+
+  .nav-tools {
+    gap: 14px;
+  }
+
+  .kids {
+    display: none;
+  }
+
+  .hero {
+    height: 75vh;
+    min-height: 550px;
+  }
+
+  .hero-art {
+    background-position: 57% center;
+  }
+
+  .hero-content {
+    top: 23%;
+    width: 62vw;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .hero-bottom {
+    bottom: 16%;
+  }
+
+  .continue-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 18px;
+  }
+
+  .poster {
+    height: clamp(150px, 29vw, 210px);
+  }
+
+  .catalog {
+    margin-top: -34px;
+  }
+
+  .trending-cards {
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .trend-poster {
+    height: 195px;
+  }
+
+  .rank {
+    font-size: 96px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .footer-brand {
+    width: 100%;
+  }
+
+}
+
+
+/* ========================================
+   10. Mobile layout
+   ======================================== */
+
+@media (max-width: 480px) {
+
+  .topbar {
+    gap: 15px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a:nth-child(3) {
+    display: none;
+  }
+
+  .nav-tools {
+    gap: 10px;
+  }
+
+  .icon-button {
+    font-size: 17px;
+  }
+
+  .hero {
+    min-height: 600px;
+    height: 82vh;
+  }
+
+  .hero-art {
+    background-position: 62% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(
+        90deg,
+        #080808 0%,
+        rgba(8, 8, 8, 0.8) 38%,
+        rgba(8, 8, 8, 0.14) 100%
+      ),
+      linear-gradient(
+        0deg,
+        #090909 0%,
+        transparent 48%,
+        rgba(0, 0, 0, 0.25) 100%
+      );
+  }
+
+  .hero-content {
+    top: 24%;
+    left: 5vw;
+    width: 77vw;
+  }
+
+  h1 {
+    font-size: clamp(76px, 18vw, 100px);
+    margin: 20px 0;
+  }
+
+  .description {
+    max-width: 320px;
+    font-size: 12px;
+  }
+
+  .hero-bottom {
+    bottom: 13%;
+  }
+
+  .scroll-cue {
+    bottom: 17px;
+  }
+
+  .continue-row h2,
+  .section-heading h2 {
+    font-size: 16px;
+  }
+
+  .see-all {
+    font-size: 9px;
+  }
+
+  .continue-cards {
+    gap: 12px;
+  }
+
+  .poster {
+    height: clamp(125px, 36vw, 175px);
+  }
+
+  .card-name {
+    font-size: 10px;
+  }
+
+  .card-name small {
+    font-size: 8px;
+  }
+
+  .section-heading {
+    margin-top: 34px;
+  }
+
+  .trending-cards {
+    grid-template-columns: repeat(5, 132px);
+    gap: 7px;
+  }
+
+  .rank {
+    font-size: 84px;
+    margin-right: -12px;
+  }
+
+  .trend-poster {
+    height: 172px;
+  }
+
+  .trend-poster strong {
+    font-size: 19px;
+  }
+
+  footer {
+    font-size: 8px;
+  }
+
+}
+```
