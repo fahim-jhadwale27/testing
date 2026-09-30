@@ -1,0 +1,289 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Netflix-inspired student project built with HTML and CSS">
+  <title>Netflix Clone - HTML & CSS Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Netflix home">NETFLIX</a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="#home">Home</a>
+      <a href="#shows">TV Shows</a>
+      <a href="#movies">Movies</a>
+      <a href="#popular">New &amp; Popular</a>
+      <a href="#list">My List</a>
+    </nav>
+
+    <div class="nav-tools">
+      <button class="icon-button search" aria-label="Search">&#8981;</button>
+      <a class="kids" href="#kids">Kids</a>
+      <button class="icon-button" aria-label="Notifications">&#9673;</button>
+      <button class="avatar" aria-label="Profile">
+        F<span>&#8964;</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+
+    <section class="hero" aria-labelledby="hero-title">
+
+      <div
+        class="hero-art"
+        role="img"
+        aria-label="A lone traveler gazes across a dramatic mountain landscape">
+      </div>
+
+      <div class="hero-shade"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="n-mark">N</span>
+          SERIES
+          <span class="divider">|</span>
+          STUDENT PROJECT
+        </p>
+
+        <h1 id="hero-title">
+          THE<br>
+          <span>LAST</span><br>
+          FRONTIER
+        </h1>
+
+        <p class="hero-meta">
+          <span class="match">98% Match</span>
+          <span>2025</span>
+          <span class="rating">16+</span>
+          <span>1 Season</span>
+          <span class="ultra">4K</span>
+        </p>
+
+        <p class="description">
+          At the edge of the known world, one decision can change everything.
+          A gripping new series about survival, loyalty, and the cost of
+          starting over.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-light" href="#shows">
+            <span class="play">&#9654;</span>
+            Play
+          </a>
+
+          <a class="button button-muted" href="#details">
+            <span class="info">&#9432;</span>
+            More Info
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <span class="sound">&#9834;</span>
+        <span class="age-box">16+</span>
+      </div>
+
+      <div class="scroll-cue">
+        SCROLL TO EXPLORE
+        <span>&#8595;</span>
+      </div>
+
+    </section>
+
+    <section class="catalog" id="shows">
+
+      <div class="continue-row">
+        <h2>Continue Watching for Fahim</h2>
+        <a class="see-all" href="#popular">
+          Explore All <span>&#8594;</span>
+        </a>
+      </div>
+
+      <div class="cards continue-cards">
+
+        <a class="card progress-card" href="#play">
+          <div class="poster poster-one">
+            <span class="poster-label">N</span>
+            <span class="poster-title">
+              THE<br>DEEP
+            </span>
+            <span class="card-play">&#9654;</span>
+          </div>
+
+          <span class="progress">
+            <i style="width: 68%"></i>
+          </span>
+
+          <span class="card-name">
+            The Deep End
+            <small>Episode 4 &mdash; 38m left</small>
+          </span>
+
+          <span class="more">&hellip;</span>
+        </a>
+
+        <a class="card progress-card" href="#play">
+          <div class="poster poster-two">
+            <span class="poster-label">N</span>
+            <span class="poster-title script">
+              Wild<br>Hearts
+            </span>
+            <span class="card-play">&#9654;</span>
+          </div>
+
+          <span class="progress">
+            <i style="width: 35%"></i>
+          </span>
+
+          <span class="card-name">
+            Wild Hearts
+            <small>Episode 2 &mdash; 51m left</small>
+          </span>
+
+          <span class="more">&hellip;</span>
+        </a>
+
+        <a class="card progress-card" href="#play">
+          <div class="poster poster-three">
+            <span class="poster-label">N</span>
+            <span class="poster-title small-poster">
+              AFTER<br>THE FALL
+            </span>
+            <span class="card-play">&#9654;</span>
+          </div>
+
+          <span class="progress">
+            <i style="width: 82%"></i>
+          </span>
+
+          <span class="card-name">
+            After the Fall
+            <small>Episode 6 &mdash; 12m left</small>
+          </span>
+
+          <span class="more">&hellip;</span>
+        </a>
+
+        <a class="card progress-card" href="#play">
+          <div class="poster poster-four">
+            <span class="poster-label">N</span>
+            <span class="poster-title serif">
+              The<br>Witness
+            </span>
+            <span class="card-play">&#9654;</span>
+          </div>
+
+          <span class="progress">
+            <i style="width: 22%"></i>
+          </span>
+
+          <span class="card-name">
+            The Witness
+            <small>Episode 1 &mdash; 44m left</small>
+          </span>
+
+          <span class="more">&hellip;</span>
+        </a>
+
+      </div>
+
+      <div class="section-heading" id="popular">
+
+        <div>
+          <p class="section-kicker">
+            THE STORIES EVERYONE'S WATCHING
+          </p>
+
+          <h2>
+            Trending Now
+            <span>&#8599;</span>
+          </h2>
+        </div>
+
+        <a class="see-all" href="#popular">
+          View all <span>&#8594;</span>
+        </a>
+
+      </div>
+
+      <div class="cards trending-cards">
+
+        <a class="trend-card" href="#watch">
+          <span class="rank">01</span>
+
+          <div class="trend-poster trend-one">
+            <span class="mini-n">N</span>
+            <strong>RED<br>HORIZON</strong>
+            <small>THE SERIES</small>
+          </div>
+        </a>
+
+        <a class="trend-card" href="#watch">
+          <span class="rank">02</span>
+
+          <div class="trend-poster trend-two">
+            <span class="mini-n">N</span>
+            <strong>NO<br>TURNING<br>BACK</strong>
+            <small>A NETFLIX FILM</small>
+          </div>
+        </a>
+
+        <a class="trend-card" href="#watch">
+          <span class="rank">03</span>
+
+          <div class="trend-poster trend-three">
+            <span class="mini-n">N</span>
+            <strong>THE<br>OTHER<br>SIDE</strong>
+            <small>ONLY ON NETFLIX</small>
+          </div>
+        </a>
+
+        <a class="trend-card" href="#watch">
+          <span class="rank">04</span>
+
+          <div class="trend-poster trend-four">
+            <span class="mini-n">N</span>
+            <strong>AFTER<br>HOURS</strong>
+            <small>NEW SERIES</small>
+          </div>
+        </a>
+
+        <a class="trend-card" href="#watch">
+          <span class="rank">05</span>
+
+          <div class="trend-poster trend-five">
+            <span class="mini-n">N</span>
+            <strong>BLUE<br>WILDERNESS</strong>
+            <small>A NETFLIX DOCUMENTARY</small>
+          </div>
+        </a>
+
+      </div>
+
+      <footer>
+        <span class="brand footer-brand">NETFLIX</span>
+        <span>Questions? Call 000-800-919-1694</span>
+        <span>Student project — Netflix-inspired UI — HTML &amp; CSS only</span>
+        <span>&copy; 2025</span>
+      </footer>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
+```
